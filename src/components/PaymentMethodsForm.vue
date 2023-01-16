@@ -18,19 +18,7 @@
         <Form class="form row" v-if="!loading" @submit="handleSubmit" :validation-schema="schema">
           <div class="form__group col-12">
             <label class="label" for="bankName">Название банка<span class="text-danger"> *</span></label>
-            <Field name="bankName" v-slot="{ field }" v-model="paymentMethod.bankName">
-              <select class="field" v-bind="field">
-                <option disabled selected>Выберите значение</option>
-                <option value="OptimaBank">OptimaBank</option>
-                <option value="DemirBank">DemirBank</option>
-
-                <option value="KICB">KICB</option>
-                <option value="RSK">RSK</option>
-                <option value="AKB">AKB</option>
-                <option value="Mbank">Mbank</option>
-                <option value="ELSOM">ELSOM</option>
-              </select>
-            </Field>
+            <Field class="field" name="bankName" style="text-transform:uppercase" type="text" v-model="paymentMethod.bankName" />
             <ErrorMessage name="bankName" class="error-feedback" />
           </div>
 
